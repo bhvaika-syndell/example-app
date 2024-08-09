@@ -114,13 +114,11 @@ class HomeController extends Controller
     public function updateStaff(Request $request, $id){
       
         // dd($id);
-
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'message' => 'required|string',
         ]);
-
         $update = staff::find($id);
 
         $update->name = $request->name;
@@ -129,11 +127,14 @@ class HomeController extends Controller
 
         $update->save();
         // return response()->json($update);
-        return response()->json(['success'=> 'staff member updated successfully']);
-
-
+        // return response()->json(['success'=> 'staff member updated successfully']);
+        return redirect()->route('show.data')->with('success', 'Staff member deleted successfully.');
     }
 
-
-
+    public function deleteStaff($id){
+        $deletestaff = staff::find($id);
+        $deletestaff->delete();
+        // return response()->json(['success'=> 'Delete successfully', 'data'=> $deletestaff], 200);
+        return redirect()->route('show.data')->with('success', 'Staff member deleted successfully.');
+    }
 }

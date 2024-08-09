@@ -86,7 +86,7 @@
                             
                                 <a href="{{ route('staff.edit', [$member->id]) }}" class="btn btn-update">Update</a>
 
-                                <form action="" method="POST" style="display:inline;">
+                                <form action="{{ route('staff.delete', [$member->id]) }}" method="POST" style="display:inline;">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-delete">Delete</button>

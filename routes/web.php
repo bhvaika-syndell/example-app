@@ -37,6 +37,6 @@ Route::get('/form', [HomeController::class, 'showForm'])->name('form.show');
 Route::post('/form', [HomeController::class, 'submitForm'])->name('form.submit');
 Route::get('/showdata', [HomeController::class, 'displayData'])->name('show.data');
 Route::get('/editdata/{id}', [HomeController::class, 'showeditData'])->name('staff.edit');
-// Use PUT or PATCH method for updating
-Route::put('/editform/{id}', [HomeController::class, 'updateStaff'])->name('staff.editdata');
+Route::put('/editform/{id}', [HomeController::class, 'updateStaff'])->name('staff.editdata'); // Use PUT or PATCH method for updating
+Route::delete('/removeStaff/{id}', [HomeController::class, 'deleteStaff'])->name('staff.delete');
 
