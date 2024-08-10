@@ -137,4 +137,8 @@ class HomeController extends Controller
         // return response()->json(['success'=> 'Delete successfully', 'data'=> $deletestaff], 200);
         return redirect()->route('show.data')->with('success', 'Staff member deleted successfully.');
     }
-}
+
+    public function myname(){
+        return "Bhavika";
+    }
+}           

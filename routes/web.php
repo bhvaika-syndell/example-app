@@ -18,7 +18,7 @@ use App\Http\Controllers\HomeController;
 Route::get('/', function () {
     return view('welcome');
 });
-
+                    
 Route::get('/about', function(){
     return view('first');
 });
@@ -40,3 +40,5 @@ Route::get('/editdata/{id}', [HomeController::class, 'showeditData'])->name('sta
 Route::put('/editform/{id}', [HomeController::class, 'updateStaff'])->name('staff.editdata'); // Use PUT or PATCH method for updating
 Route::delete('/removeStaff/{id}', [HomeController::class, 'deleteStaff'])->name('staff.delete');
 
+
+Route::get('/myname',[HomeController::class, 'myname']);
